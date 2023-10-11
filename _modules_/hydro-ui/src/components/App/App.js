@@ -9,11 +9,7 @@ function App() {
     return (
         <div className="App">
             <NavBar/>
-            <Container maxWidth="xm">
-                <Paper elevation={3}>
-                    <h1>Hello World!</h1>
-                </Paper>
-            </Container>
+
         </div>
     );
 }
