@@ -1,12 +1,13 @@
 import React from 'react';
 import NavBar from '../NavBar/NavBar';
+import PlantCard from "../LandingPage/PlantCard";
 
 function MainPage() {
     return (
-            <div>
-                <h1>All About Me!</h1>
-                <p>I like movies and blah blah blah blah blah</p>
-            </div>
+        <div className="MainPage" style={{paddingTop: '80px'}}>
+            <h1>MainPage</h1>
+            <PlantCard />
+        </div>
     );
 }
 

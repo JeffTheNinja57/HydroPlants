@@ -1,7 +1,8 @@
 import React from 'react';
-import {Paper} from "@mui/material";
-import Container from "@mui/material/Container";
 import NavBar from "../NavBar/NavBar";
+import PlantCard from "../LandingPage/PlantCard";
+import LandingPage from "../LandingPage/LandingPage";
+import MainPage from "../Dashboard/MainPage";
 
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
     return (
         <div className="App">
             <NavBar/>
-
+            <MainPage/>
         </div>
     );
 }
