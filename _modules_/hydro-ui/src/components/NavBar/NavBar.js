@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {
     AppBar,
     Avatar,
@@ -43,32 +44,35 @@ function NavBar() {
                     <Box sx={{display: 'flex', alignItems: 'center', width: '100%'}}>
                         <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                             {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
-                                    sx={{my: 2, color: 'white', display: 'block'}}
-                                >
-                                    {page}
-                                </Button>
+                                <Link to={`/${page}`}>
+                                    <Button
+                                        key={page}
+                                        onClick={handleCloseNavMenu}
+                                        sx={{my: 2, color: 'white', display: 'block'}}
+                                    >
+                                        {page}
+                                    </Button>
+                                </Link>
                             ))}
                         </Box>
-                        <Box sx={{display: 'flex', justifyContent: 'center', width: '100%'}}>
-                            <Typography
-                                variant="h6"
-                                noWrap
-                                component="a"
-                                href="#app-bar-with-responsive-menu"
-                                sx={{
-                                    mr: 2,
-                                    fontFamily: 'monospace',
-                                    fontWeight: 700,
-                                    letterSpacing: '.3rem',
-                                    color: 'inherit',
-                                    textDecoration: 'none',
-                                }}
-                            >
-                                HydroPlants
-                            </Typography>
+                        <Box sx={{display: 'flex', justifyContent: 'center', width: '70%'}}>
+                            <Link to="/landingpage" style={{textDecoration: 'none'}}>
+                                <Typography
+                                    variant="h6"
+                                    noWrap
+                                    component="a"
+                                    sx={{
+                                        mr: 2,
+                                        fontFamily: 'monospace',
+                                        fontWeight: 700,
+                                        letterSpacing: '.3rem',
+                                        color: 'inherit',
+                                        textDecoration: 'none',
+                                    }}
+                                >
+                                    HydroPlants
+                                </Typography>
+                            </Link>
                         </Box>
                         <Box sx={{flexGrow: 0}}>
                             <Tooltip title="Open settings">
