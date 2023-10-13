@@ -1,22 +1,22 @@
 import React from 'react';
-import {Paper} from "@mui/material";
-import Container from "@mui/material/Container";
 import NavBar from "../NavBar/NavBar";
-
+import PlantCard from "../LandingPage/PlantCard";
+import LandingPage from "../LandingPage/LandingPage";
+import MainPage from "../Dashboard/MainPage";
+import BlogPage from "../Blog/BlogPage";
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
-
     return (
         <div className="App">
-            <NavBar/>
-            <Container maxWidth="xm">
-                <Paper elevation={3}>
-                    <h1>Hello World!</h1>
-                </Paper>
-            </Container>
+            <NavBar />
+            <Routes>
+                <Route path="/Dashboard" element={<MainPage />} />
+                <Route path="/landingpage" element={<LandingPage />} />
+                <Route path="/Blog" element={<BlogPage />} />
+            </Routes>
         </div>
     );
 }
 
 export default App;
-
