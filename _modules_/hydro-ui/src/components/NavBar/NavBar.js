@@ -15,7 +15,7 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 
-const pages = ['Dashboard', 'Blog'];
+const pages = ['Dashboard', 'Tutorials'];
 const settings = ['My Pi', 'Account', 'Logout'];
 
 function NavBar() {
@@ -38,13 +38,13 @@ function NavBar() {
     };
 
     return (
-        <AppBar position="fixed">
+        <AppBar position="fixed" sx={{backgroundColor: '#1CAC78'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box sx={{display: 'flex', alignItems: 'center', width: '100%'}}>
                         <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
-                            {pages.map((page) => (
-                                <Link to={`/${page}`}>
+                            {pages.map((page, index) => (
+                                <Link to={`/${page}`} key={index}>
                                     <Button
                                         key={page}
                                         onClick={handleCloseNavMenu}
@@ -60,14 +60,14 @@ function NavBar() {
                                 <Typography
                                     variant="h6"
                                     noWrap
-                                    component="a"
                                     sx={{
                                         mr: 2,
                                         fontFamily: 'monospace',
                                         fontWeight: 700,
                                         letterSpacing: '.3rem',
-                                        color: 'inherit',
+                                        color: 'white',
                                         textDecoration: 'none',
+                                        marginLeft: '-200px',
                                     }}
                                 >
                                     HydroPlants
@@ -101,9 +101,11 @@ function NavBar() {
                 onClose={handleCloseUserMenu}
             >
                 {settings.map((setting) => (
-                    <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
-                    </MenuItem>
+                    <Link to={`/${setting}`} style={{textDecoration: 'none', color: 'black'}}>
+                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                            <Typography textAlign="center">{setting}</Typography>
+                        </MenuItem>
+                    </Link>
                 ))}
             </Menu>
         </AppBar>
